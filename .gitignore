@@ -1,0 +1,8 @@
+
+packages/
+**/bin/
+**/obj/
+**/Src
+**/Rpc
+
+.vs

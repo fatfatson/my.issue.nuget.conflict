@@ -1,0 +1,20 @@
+<Project >
+
+  <PropertyGroup>
+    <PackageDir>$(MSBuildProjectDirectory)\bin\$(Configuration)</PackageDir>
+  </PropertyGroup>
+
+  <Target Name="FindVersion" AfterTargets="Build">
+    
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="---------Info: %(OutputAssemblyInfo.Version)" />
+  </Target>
+  
+
+  <Target Name="NugetPub" DependsOnTargets="FindVersion">
+    <Message Text="PackageDir=$(PackageDir)" />
+    <Exec WorkingDirectory="$(PackageDir)" Command="NuGet.exe push &quot;$(PackageId).$(PackageVersion).nupkg&quot; -Source https://api.nuget.org/v3/index.json" />
+  </Target>
+</Project>

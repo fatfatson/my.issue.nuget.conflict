@@ -1,0 +1,2 @@
+cd /d "D:\code\demo\msbuild-issue\conflict\ConsoleApp1" &msbuild "MyApp.csproj" /t:sdvViewer /p:configuration="Debug" /p:platform="Any CPU" /p:SolutionDir="D:\code\demo\msbuild-issue\conflict" 
+exit %errorlevel% 

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>my.issus.conflict.ConflictLib</PackageId>
+    <Company>my</Company>
+    <Product>issuse</Product>
+    <Authors>wellbye</Authors>      
+  </PropertyGroup>
+
+  <Import Project="..\nuget.target"/>
+</Project>
